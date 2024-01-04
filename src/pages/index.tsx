@@ -9,7 +9,7 @@ const poppins = Poppins({
   display: "swap",
   weight: "400",
 });
-//hola
+
 export default function Home() {
   const [url, setUrl] = useState("");
   const [price, setPrice] = useState(50);
@@ -34,12 +34,12 @@ export default function Home() {
   }, [price]);
   return (
     <main className={poppins.className}>
-      <div className="flex items-center flex-col p-20 gap-4">
-        <div className="text-5xl">Invitame un Cafecito</div>
+      <div className="flex items-center flex-col justify-center h-screen md:gap-4 p-4">
+        <div className="text-3xl md:text-5xl">Invitame un Cafecito</div>
         <Coffee size={50} weight="fill" />
         <div className="flex gap-4">
           <button
-            className={`rounded-2xl p-2 text-xl ${
+            className={`rounded-2xl p-2 text-sm md:text-xl ${
               price === 50 ? "bg-green-100" : "bg-orange-100"
             }`}
             onClick={() => {
@@ -49,7 +49,7 @@ export default function Home() {
             Invitar $50
           </button>
           <button
-            className={`rounded-2xl p-2 text-xl ${
+            className={`rounded-2xl p-2 text-sm md:text-xl ${
               price === 100 ? "bg-green-100" : "bg-orange-100"
             }`}
             onClick={() => {
@@ -59,7 +59,7 @@ export default function Home() {
             Invitar $100
           </button>
           <button
-            className={`rounded-2xl p-2 text-xl ${
+            className={`rounded-2xl p-2 text-sm md:text-xl ${
               price === 200 ? "bg-green-100" : "bg-orange-100"
             }`}
             onClick={() => {

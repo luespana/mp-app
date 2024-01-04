@@ -26,7 +26,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             },
           ],
           back_urls: {
-            success: `${URL}/success/${itemId}`,
+            success: `${URL}/success`,
           },
         },
       });

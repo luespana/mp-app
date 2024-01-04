@@ -4,7 +4,7 @@ import { MercadoPagoConfig, Preference } from "mercadopago";
 export const URL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000"
-    : "https://mp-app-gules.vercel.app";
+    : "https://coffee-mp-app.vercel.app";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {

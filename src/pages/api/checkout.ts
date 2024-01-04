@@ -8,26 +8,25 @@ export const URL =
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
-    const body = req.body;
-    console.log(body);
-
     try {
       const client = new MercadoPagoConfig({
         accessToken: process.env.NEXT_ACCESS_TOKEN!,
       });
+      const amount = req.body.amount;
+      const itemId = amount.toString();
       const preference = new Preference(client);
       const response = await preference.create({
         body: {
           items: [
             {
-              id: "hola",
+              id: itemId,
               title: "Cafecito",
               quantity: 1,
-              unit_price: body.amount,
+              unit_price: amount,
             },
           ],
           back_urls: {
-            success: URL,
+            success: `${URL}/success/${itemId}`,
           },
         },
       });

@@ -9,7 +9,7 @@ const poppins = Poppins({
   display: "swap",
   weight: "400",
 });
-
+//hola
 export default function Home() {
   const [url, setUrl] = useState("");
   const [price, setPrice] = useState(50);

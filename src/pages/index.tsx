@@ -37,7 +37,7 @@ export default function Home() {
       <div className="flex items-center flex-col justify-center h-screen md:gap-4 p-4">
         <div className="text-3xl md:text-5xl">Invitame un Cafecito</div>
         <Coffee size={50} weight="fill" />
-        <div className="flex gap-4">
+        <div className="flex gap-4 mt-4">
           <button
             className={`rounded-2xl p-2 text-sm md:text-xl ${
               price === 50 ? "bg-green-100" : "bg-orange-100"

@@ -1,10 +1,15 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { MercadoPagoConfig, Preference } from "mercadopago";
 
+export const URL =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3000"
+    : "https://mp-app-gules.vercel.app";
+
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
-    const product = req.body.product;
-    const URL = "http://localhost:3000";
+    const body = req.body;
+    console.log(body);
 
     try {
       const client = new MercadoPagoConfig({
@@ -18,7 +23,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
               id: "hola",
               title: "Cafecito",
               quantity: 1,
-              unit_price: 100,
+              unit_price: body.amount,
             },
           ],
           back_urls: {

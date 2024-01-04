@@ -2,6 +2,7 @@ import { Coffee } from "@phosphor-icons/react";
 import axios from "axios";
 import { Poppins } from "next/font/google";
 import { useEffect, useState } from "react";
+import { URL } from "./api/checkout";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -15,11 +16,9 @@ export default function Home() {
   useEffect(() => {
     const handleInvitation = async () => {
       try {
-        const response = await axios.post(
-          "http://localhost:3000/api/checkout",
-          {}
-        );
-        console.log(response.data);
+        const response = await axios.post(URL + "/api/checkout", {
+          amount: 100,
+        });
         setUrl(response.data.url);
       } catch (error) {
         console.error("Error", error);

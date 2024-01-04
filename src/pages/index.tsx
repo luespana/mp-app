@@ -23,6 +23,7 @@ export default function Home() {
           amount: price,
         });
         setUrl(response.data.url);
+        console.log(response.data);
       } catch (error) {
         console.error("Error", error);
       } finally {
@@ -70,6 +71,7 @@ export default function Home() {
         </div>
         <a
           href={url}
+          target="_blank"
           className="rounded-xl bg-blue-400 py-2 w-1/4 text-center mt-4 text-white"
         >
           {loading ? "Cargando" : "Pagar"}
